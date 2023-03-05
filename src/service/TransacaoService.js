@@ -20,5 +20,9 @@ class TransacaoService extends ITransacaoService {
       await this.transacaoRepository.create(transacao);
   
     }
+
+    async transferenciaComTransacao(transacao) {
+      await this.transacaoRepository.transferenciaComTransacao(transacao);
+    }
   }
   

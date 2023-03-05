@@ -23,6 +23,18 @@ class TransacaoController {
       res.status(500).send(error.message);
     }
   }
+
+  async transferenciaComTransacao(req, res) {
+    try {
+      const transacao = req.body;
+      await this.transacaoService.transferenciaComTransacao(transacao);
+      res.sendStatus(200);
+    } catch (error) {
+      res.status(500).send(error.message);
+    }
+  }
+
+
 }
 
 module.exports = TransacaoController;
