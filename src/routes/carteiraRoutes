@@ -1,0 +1,22 @@
+const express = require('express');
+const UsuarioController = require('../controller/UsuarioController');
+const TransacaoController = require('../controller/TransacaoController');
+
+const router = express.Router();
+
+
+// Rota para obter o saldo do usuário
+router.get('/:id/obterSaldoUsuario', UsuarioController.obterSaldoUsuario);
+// Rota para cadastrar um novo usuário
+router.post('/', UsuarioController.cadastrarUsuario);
+
+const transacaoController = new TransacaoController();
+
+//router.get('/transacoes/:id', transacaoController.consultarPorDestinatario.bind(transacaoController));
+//outer.post('/transacoes', transacaoController.criar.bind(transacaoController));
+
+router.get(':id', (req, res) => {TransacaoController.consultarPorDestinatario(req, res);});
+router.post('/saldo/:id', (req, res) => {TransacaoController.consultarSaldo(req, res);});
+
+module.exports = router;
+
