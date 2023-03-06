@@ -1,3 +1,5 @@
+const ITransacaoService = require('./ITransacaoService');
+
 class TransacaoService extends ITransacaoService {
     constructor(transacaoRepository) {
       super();
@@ -25,4 +27,4 @@ class TransacaoService extends ITransacaoService {
       await this.transacaoRepository.transferenciaComTransacao(transacao);
     }
   }
-  
+  module.exports = ITransacaoService;

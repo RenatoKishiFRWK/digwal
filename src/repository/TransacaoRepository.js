@@ -1,3 +1,5 @@
+const ITransacaoRepository = require('../repository/ITransacaoRepository');
+
 class TransacaoRepository extends ITransacaoRepository {
     constructor(db) {
       super();
@@ -57,3 +59,4 @@ class TransacaoRepository extends ITransacaoRepository {
       }
     }
   }
+  module.exports = TransacaoRepository;
